@@ -18,9 +18,9 @@ df[,3:9] <- lapply(df[,3:9], as.numeric)
 df$datetime <- strptime(paste(as.Date(df$Date, "%d/%m/%Y"), df$Time), "%Y-%m-%d %H:%M:%S")
 
 ## generate plot and save it to the PNG file
-#png(file = "plot1.png")
+png(file = "plot1.png")
 hist(df$Global_active_power, breaks=20, 
      main = "Global Active Power",
      xlab ="Global Active Power (kilowatts)",
      col = "red")
-#dev.off()
+dev.off()
