@@ -12,11 +12,11 @@ df <- read.table("household_power_consumption.txt",
 df <- df[df$Date %in% c("1/2/2007", "2/2/2007"),]
 
 ## convert measurements to the rght class
-df[,3:9] <- lapply(df[,3:9], as.numeric)
+df[3:9] <- lapply(df[3:9], as.numeric)
 
 ## generate plot and save it to the PNG file
 png(file = "plot1.png")
-hist(df$Global_active_power, breaks=20, 
+hist(df$Global_active_power, breaks = 20, 
      main = "Global Active Power",
      xlab ="Global Active Power (kilowatts)",
      col = "red")
