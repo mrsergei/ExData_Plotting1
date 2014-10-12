@@ -22,8 +22,10 @@ df$datetime <- parse_date_time(paste(df$Date, df$Time), "dmYHMS")
 png(file = "plot4.png")
 par(mfcol = c(2, 2))
 with(df, { 
-    plot(datetime, Global_active_power, type = 'l', xlab = "", ylab ="Global Active Power")
-    plot(datetime, Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
+    plot(datetime, Global_active_power, type = 'l', xlab = "",
+         ylab ="Global Active Power")
+    plot(datetime, Sub_metering_1, type = "l", xlab = "",
+         ylab = "Energy sub metering")
     lines(datetime, Sub_metering_2, type = "l", col = "red")
     lines(datetime, Sub_metering_3, type = "l", col = "blue")
     legend("topright", bty = "n", lty = 1, col = c("black", "red", "blue"), 
@@ -32,4 +34,3 @@ with(df, {
     plot(datetime, Global_reactive_power, type = "l")
 })
 dev.off()
-par(mfcol = c(1, 1))
